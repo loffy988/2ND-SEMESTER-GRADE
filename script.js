@@ -27,6 +27,7 @@ document.getElementById("talkButton").addEventListener("click", () => {
 document.getElementById("timeButton").addEventListener("click", () => {
   responseMessage.textContent = "I understand. Take the time and space you need — there's no pressure to reply. ♡";
 });
+
 const backgroundMusic = document.getElementById("backgroundMusic");
 const musicToggle = document.getElementById("musicToggle");
 
