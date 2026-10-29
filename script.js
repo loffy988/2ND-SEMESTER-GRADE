@@ -29,17 +29,18 @@ document.getElementById("timeButton").addEventListener("click", () => {
 });
 
 const backgroundMusic = document.getElementById("backgroundMusic");
+const startMusic = document.getElementById("startMusic");
 
-if (backgroundMusic) {
+if (backgroundMusic && startMusic) {
 backgroundMusic.volume = 0.5;
 
-backgroundMusic.play().catch(() => {
-console.log("Autoplay blocked. Tap the page to start the music.");
-});
-
-document.addEventListener("click", function startMusic() {
-if (backgroundMusic.paused) {
-backgroundMusic.play().catch(() => {});
+startMusic.addEventListener("click", async () => {
+try {
+await backgroundMusic.play();
+startMusic.textContent = "Playing our song ♡";
+} catch (error) {
+console.error("Music could not play:", error);
+startMusic.textContent = "Tap to try again ♡";
 }
-}, { once: true });
+});
 }
