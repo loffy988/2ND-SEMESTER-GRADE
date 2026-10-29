@@ -9,25 +9,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
- background: white;
-    padding: 35px;
-    border-radius: 25px;
-    margin: 20px;
-  ">
-    <h1 style="color: #ff69a6;">Hi, Bebi! 💗</h1>
-    <p>I made something special just for you. 🥹</p>
-    <button onclick="document.getElementById('welcomeScreen').remove()"
-      style="
-        background: #ff69a6;
-        color: white;
-        border: none;
-        padding: 14px 22px;
-        border-radius: 25px;
-        font-size: 16px;
-        cursor: pointer;
-      ">
-      Open Your Surprise 💌
-    </button>
+  <div id="welcomeScreen">
+  <div class="welcome-card">
+    <div class="welcome-heart">💗</div>
+    <h1>Hi, Bebi! 🎀</h1>
+    <p>I made something special just for you.</p>
+    <button id="openLetter">Open Your Surprise 💌</button>
   </div>
 </div>
 <audio id="backgroundMusic" loop>
@@ -39,7 +26,10 @@
   <header class="topbar">
     <a class="brand" href="#home" aria-label="For Bebi, home">for my bebi <span>♡</span></a>
     <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false">
-      <span aria-hidden="true">♫</span> <span id="musicLabel">Play our song</span>
+     <button id="musicToggle" type="button">
+  <span aria-hidden="true">♫</span>
+  <span id="musicLabel">Play our song</span>
+</button>
     </button>
   </header>
 
