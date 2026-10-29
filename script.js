@@ -29,26 +29,19 @@ document.getElementById("timeButton").addEventListener("click", () => {
 });
 
 const backgroundMusic = document.getElementById("backgroundMusic");
-const musicToggle = document.getElementById("musicToggle");
-const musicLabel = document.getElementById("musicLabel");
 
-if (backgroundMusic && musicToggle && musicLabel) {
+if (backgroundMusic) {
 backgroundMusic.volume = 0.5;
 
-musicToggle.addEventListener("click", async () => {
+const tryAutoplay = async () => {
 try {
-if (backgroundMusic.paused) {
 await backgroundMusic.play();
-musicLabel.textContent = "Pause our song";
-} else {
-backgroundMusic.pause();
-musicLabel.textContent = "Play our song";
-}
 } catch (error) {
-console.error("Music playback failed:", error);
-musicLabel.textContent = "Tap to play again";
+console.log("The browser blocked autoplay. Music needs a user interaction.");
 }
-});
+};
+
+tryAutoplay();
 }
 const openLetterButton = document.getElementById("openLetter");
 const welcomeScreen = document.getElementById("welcomeScreen");
