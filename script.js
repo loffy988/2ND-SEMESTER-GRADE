@@ -27,3 +27,21 @@ document.getElementById("talkButton").addEventListener("click", () => {
 document.getElementById("timeButton").addEventListener("click", () => {
   responseMessage.textContent = "I understand. Take the time and space you need — there's no pressure to reply. ♡";
 });
+const backgroundMusic = document.getElementById("backgroundMusic");
+const musicToggle = document.getElementById("musicToggle");
+
+if (backgroundMusic && musicToggle) {
+  musicToggle.addEventListener("click", async () => {
+    if (backgroundMusic.paused) {
+      try {
+        await backgroundMusic.play();
+        musicToggle.textContent = "Pause our song ♡";
+      } catch (error) {
+        console.error("Could not play music:", error);
+      }
+    } else {
+      backgroundMusic.pause();
+      musicToggle.textContent = "Play our song ♡";
+    }
+  });
+}
