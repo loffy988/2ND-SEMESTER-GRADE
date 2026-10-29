@@ -112,3 +112,53 @@ h2 { font: 500 clamp(2.15rem, 5vw, 3.5rem)/1.2 var(--serif); letter-spacing: -.0
   background: #fff0f6;
   border-radius: 4px;
 }
+#welcomeScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffd6e7, #fff0f5, #ffc2dc);
+  padding: 20px;
+  text-align: center;
+}
+
+.welcome-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 25px;
+  max-width: 350px;
+  width: 100%;
+  box-shadow: 0 10px 35px rgba(255, 105, 180, 0.25);
+}
+
+.welcome-heart {
+  font-size: 60px;
+  animation: heartbeat 1s infinite;
+}
+
+.welcome-card h1 {
+  color: #ff4f91;
+  font-size: 32px;
+}
+
+.welcome-card p {
+  color: #a34c70;
+  font-size: 16px;
+}
+
+#welcomeScreen button {
+  background: #ff69a6;
+  color: white;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}

@@ -44,3 +44,11 @@ startMusic.textContent = "Tap to try again ♡";
 }
 });
 }
+const openLetterButton = document.getElementById("openLetter");
+const welcomeScreen = document.getElementById("welcomeScreen");
+
+if (openLetterButton && welcomeScreen) {
+  openLetterButton.addEventListener("click", () => {
+    welcomeScreen.style.display = "none";
+  });
+}
